@@ -34,8 +34,8 @@ if __name__ == "__main__":
     path = os.path.dirname(os.path.abspath(__file__))
     qml = os.path.join(path,'qml','main.qml')
     
-    # icon = os.path.join(path, 'icon', 'windsofparadise.ico')
-    # app.setWindowIcon(QtGui.QIcon(icon))
+    icon = os.path.join(path, 'icon', 'org.kde.plasma.analogclock.ico')
+    app.setWindowIcon(QtGui.QIcon(icon))
     
     engine.load(qml)
     sys.exit(app.exec_())
