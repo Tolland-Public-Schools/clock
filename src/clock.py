@@ -8,10 +8,10 @@ import zipfile
 import traceback
 import subprocess
 
-from PySide2.QtGui import QGuiApplication
-from PySide2.QtQml import QQmlApplicationEngine
-from PySide2.QtCore import QObject, Signal, Slot, Qt, QRunnable, QThread, QThreadPool
-from PySide2 import QtGui
+from PyQt6.QtGui import QGuiApplication
+from PyQt6.QtQml import QQmlApplicationEngine
+from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, Qt, QRunnable, QThread, QThreadPool
+from PyQt6 import QtGui
 from pathlib import Path
 
 class UI(QObject):
@@ -21,8 +21,6 @@ class UI(QObject):
     version = {}
 
 if __name__ == "__main__":
-    QGuiApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True) #enable highdpi scaling
-    QGuiApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True) #use highdpi icons
     app = QGuiApplication(sys.argv)    
     # Instatitate objects
     ui = UI()
@@ -38,4 +36,4 @@ if __name__ == "__main__":
     app.setWindowIcon(QtGui.QIcon(icon))
     
     engine.load(qml)
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
